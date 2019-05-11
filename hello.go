@@ -2,18 +2,37 @@ package main
 
 import "fmt"
 
-// HelloPrefix is hello prefix
-const HelloPrefix = "Hello, "
+// Consts
+const (
+	Spanish            = "Spanish"
+	English            = "English"
+	Franch             = "Franch"
+	SpanishHelloPrefix = "Hola, "
+	FranchHelloPrefix  = "Hi, "
+	EnglishHelloPrefix = "Hello, "
+)
 
 // Hello return a hello message
-func Hello(name string) string {
+func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
-	return HelloPrefix + name
+	return greatingPrefix(language) + name
+}
+
+func greatingPrefix(language string) (prefix string) {
+	switch language {
+	case Franch:
+		prefix = FranchHelloPrefix
+	case Spanish:
+		prefix = SpanishHelloPrefix
+	default:
+		prefix = EnglishHelloPrefix
+	}
+	return
 }
 
 func main() {
 
-	fmt.Println(Hello("mohsen"))
+	fmt.Println(Hello("mohsen", English))
 }

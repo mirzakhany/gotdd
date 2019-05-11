@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package hello
 
 // Consts
 const (
@@ -30,9 +28,4 @@ func greatingPrefix(language string) (prefix string) {
 		prefix = EnglishHelloPrefix
 	}
 	return
-}
-
-func main() {
-
-	fmt.Println(Hello("mohsen", English))
 }

@@ -13,11 +13,9 @@ func ArraySum(numbers []int) int {
 // SumAll return sum of n number of arrays
 func SumAll(numbersToSum ...[]int) []int {
 
-	count := len(numbersToSum)
-	sums := make([]int, count)
-
-	for i, number := range numbersToSum {
-		sums[i] = ArraySum(number)
+	var sums []int
+	for _, numbers := range numbersToSum {
+		sums = append(sums, ArraySum(numbers))
 	}
 	return sums
 }
